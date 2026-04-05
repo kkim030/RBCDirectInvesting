@@ -2,7 +2,7 @@
 
 Why? Wanted to solve friction points I ran into using RBC Direct Investing daily: no combined view of my banking + investing accounts, no portfolio allocation chart on mobile, and no way to set up recurring investments.
 
-I rebuilt the app's navigation and visual design to match what the real RBC Direct Investing app actually looks like.
+I cloned the app and made three main improvements.
 
 **[Read the full PRD](PRD.pdf)** for the problem analysis, evidence, and success criteria behind each feature.
 
@@ -12,7 +12,7 @@ I rebuilt the app's navigation and visual design to match what the real RBC Dire
 
 ## What I Changed (and Why)
 
-### Unified Account Dashboard
+### 1. Unified Account Dashboard
 
 Merged Personal Banking (Chequing, Savings, Credit Line) and Direct Investing (TFSA, RRSP, FHSA) into one Home screen with a combined net-worth card at the top.
 
@@ -22,7 +22,7 @@ Merged Personal Banking (Chequing, Savings, Credit Line) and Direct Investing (T
   <img width="270" alt="Home — banking detail" src="https://github.com/user-attachments/assets/9eda577c-e888-4aa7-a296-bfc2a26b11cb" />
 </p>
 
-### Portfolio Allocation Breakdown
+### 2. Portfolio Allocation Breakdown
 
 The desktop Trading Dashboard has a full Portfolio Analyzer with asset-class, sector, and regional breakdowns. On mobile? You get a flat list of holdings.
 I brought a version of this to mobile — an interactive donut chart showing percentage allocation across all holdings. You can toggle between grouping by holding or by sector.
@@ -33,7 +33,7 @@ I brought a version of this to mobile — an interactive donut chart showing per
   <img width="270" alt="Allocation by sector" src="https://github.com/user-attachments/assets/1f7f3e02-3714-4850-a46d-401d23dbbf33" />
 </p>
 
-### Auto-Invest
+### 3. Auto-Invest
 
 Added recurring buy orders for any stock or ETF, across all account types - for investors who desire to dollar cost average.
 
