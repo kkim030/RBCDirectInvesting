@@ -1,16 +1,12 @@
 # RBC Direct Investing — App Improvement Prototype
 
-I use RBC Direct Investing daily and kept running into the same friction points: no combined view of my banking + investing accounts, no portfolio allocation chart on mobile (even though desktop has one), and no way to set up recurring investments. Wealthsimple and Bloom have solved all three. So I built a working iOS prototype that adds them.
+Why? Wanted to solve friction points I ran into using RBC Direct Investing daily: no combined view of my banking + investing accounts, no portfolio allocation chart on mobile, and no way to set up recurring investments.
+
+I rebuilt the app's navigation and visual design to match what the real RBC Direct Investing app actually looks like.
 
 **[Read the full PRD](PRD.pdf)** for the problem analysis, evidence, and success criteria behind each feature.
 
-<p align="center">
-  <img src="screenshots/01-home-top.png" width="200" alt="Home — combined balance" />
-  &nbsp;
-  <img src="screenshots/02-home-banking.png" width="200" alt="Home — banking accounts" />
-  &nbsp;
-  <img src="screenshots/03-pie-chart.png" width="200" alt="Portfolio allocation by holding" />
-</p>
+**[Test out the demo](https://appetize.io/app/b_l2hvvb7heqfzwuww2i52vco5ae)** to launch the application on desktop and test out the demo. When launched, scroll down and click *demo account*.
 
 ---
 
@@ -18,53 +14,40 @@ I use RBC Direct Investing daily and kept running into the same friction points:
 
 ### Unified Account Dashboard
 
-Right now, banking and investing live in completely separate profiles. You have to switch back and forth and do mental math to figure out your total balance. Every fintech competitor shows a single net-worth number — RBC doesn't.
-
-I merged Personal Banking (Chequing, Savings, Credit Line) and Direct Investing (TFSA, RRSP, FHSA) into one Home screen with a combined net-worth card at the top. The app already has access to both sets of data, so this is purely a UI change — no new API calls needed.
+Merged Personal Banking (Chequing, Savings, Credit Line) and Direct Investing (TFSA, RRSP, FHSA) into one Home screen with a combined net-worth card at the top.
 
 <p align="center">
-  <img src="screenshots/01-home-top.png" width="250" alt="Combined balance card" />
+  <img width="270" alt="Home — combined balance" src="https://github.com/user-attachments/assets/bd4d8e32-79b9-4e82-bdef-67455b2a20e6" />
   &nbsp;&nbsp;
-  <img src="screenshots/02-home-banking.png" width="250" alt="Banking accounts section" />
+  <img width="270" alt="Home — banking detail" src="https://github.com/user-attachments/assets/9eda577c-e888-4aa7-a296-bfc2a26b11cb" />
 </p>
 
 ### Portfolio Allocation Breakdown
 
-The desktop Trading Dashboard has a full Portfolio Analyzer with asset-class, sector, and regional breakdowns. On mobile? You get a flat list of holdings. That's it. Bloom's pie-chart view is one of their main selling points, and it's not hard to see why.
-
-I brought a version of this to mobile — an interactive donut chart showing percentage allocation across all holdings. Tap any slice for a detail sheet with book cost, market value, gain/loss, and a sparkline. You can toggle between grouping by holding or by sector.
+The desktop Trading Dashboard has a full Portfolio Analyzer with asset-class, sector, and regional breakdowns. On mobile? You get a flat list of holdings.
+I brought a version of this to mobile — an interactive donut chart showing percentage allocation across all holdings. You can toggle between grouping by holding or by sector.
 
 <p align="center">
-  <img src="screenshots/03-pie-chart.png" width="250" alt="Allocation by holding" />
+  <img width="270" alt="Allocation by holding" src="https://github.com/user-attachments/assets/ca285465-e697-4055-ba8e-5c5455b75a13" />
   &nbsp;&nbsp;
-  <img src="screenshots/04-pie-chart.png" width="250" alt="Allocation by sector" />
+  <img width="270" alt="Allocation by sector" src="https://github.com/user-attachments/assets/1f7f3e02-3714-4850-a46d-401d23dbbf33" />
 </p>
-
-Built with [DGCharts](https://github.com/danielgindi/Charts) — donut style, 45% hole radius, labels hidden for slices under 5% to keep it clean.
 
 ### Auto-Invest
 
-Every trade on RBC is manual. If you want to dollar-cost average into an ETF, you have to remember to log in and place the order yourself. Wealthsimple's auto-invest is one of the most-cited reasons people leave bank brokerages on r/PersonalFinanceCanada.
-
-I added recurring buy orders for any stock or ETF, across all account types. Users pick a symbol, dollar amount, frequency (weekly or monthly), and funding account. Rules can be paused, modified, or deleted with swipe actions. Everything is persisted locally via UserDefaults with Codable encoding.
-
----
-
-## UI Overhaul
-
-Beyond the three features, I rebuilt the app's navigation and visual design to match what the real RBC Direct Investing app actually looks like:
-
-- Custom tab bar — Home, Transfers, center FAB button, Quotes, More
-- Yellow floating action button with spring animation for quick actions (Place Order, View Status, Activity, Watchlists)
-- Blue gradient header with time-based greeting
-- Quotes tab with search, commission-free ETF promo, recent searches with sparklines
-- More tab with grouped menu items and sign-out
+Added recurring buy orders for any stock or ETF, across all account types - for investors who desire to dollar cost average.
 
 <p align="center">
-  <img src="screenshots/01-login.png" width="300" alt="Login screen" />
+  <img width="220" alt="Auto-invest setup" src="https://github.com/user-attachments/assets/090fa54e-3b49-4a3d-b64a-a496a3005e4e" />
+  &nbsp;&nbsp;
+  <img width="220" alt="Auto-invest form" src="https://github.com/user-attachments/assets/f30f669f-29b9-4e6f-9e57-9aa95f70680c" />
+  &nbsp;&nbsp;
+  <img width="220" alt="Auto-invest rules" src="https://github.com/user-attachments/assets/87fc7506-39be-4f34-8552-8daaef0837c3" />
 </p>
 
-A full walkthrough is in the [demo video](screenshots/demo.mp4).
+<p align="center">
+  <img width="270" alt="Auto-invest confirmation" src="https://github.com/user-attachments/assets/5933e2ed-5212-4262-8f0e-a0726aa268ea" />
+</p>
 
 ---
 
@@ -92,8 +75,6 @@ open RBCInvesting.xcodeproj
 cd rbc-api
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=demo
 ```
-
-Tap **"Try Demo Account"** on the login screen — the app works fully offline with mock data, no backend required.
 
 ---
 
