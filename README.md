@@ -4,7 +4,7 @@ A working iOS prototype built on top of an [RBC Direct Investing](https://www.rb
 
 The full PRD is available at [`PRD.pdf`](PRD.pdf).
 
-> **Try it live:** [Launch on Appetize.io](https://appetize.io/app/YOUR_APP_ID) &mdash; tap **"Try Demo Account"** to explore with mock data.
+> **Try it live:** download the pre-built simulator binary (`RBCInvesting-simulator.zip`) and tap **"Try Demo Account"** to explore with mock data.
 
 ---
 
@@ -40,7 +40,9 @@ Merged Personal Banking (Chequing, Savings, Credit Line) and Direct Investing (T
 Interactive donut chart showing percentage allocation across all holdings, brought from the desktop Portfolio Analyzer to mobile. Tap any slice for a detail sheet with book cost, market value, gain/loss, and a sparkline.
 
 <p align="center">
-  <img src="screenshots/03-pie-chart.png" width="300" alt="Portfolio allocation pie chart" />
+  <img src="screenshots/03-pie-chart.png" width="250" alt="Portfolio allocation pie chart" />
+  &nbsp;&nbsp;
+  <img src="screenshots/04-pie-chart.png" width="250" alt="Portfolio allocation by sector" />
 </p>
 
 - Toggle between **By Holding** and **By Sector** grouping
@@ -51,8 +53,6 @@ Interactive donut chart showing percentage allocation across all holdings, broug
 ### 3. Auto-Invest
 
 Recurring buy orders for any stock or ETF, across all account types. Users set a symbol, dollar amount, frequency (weekly/monthly), and funding account. This is the feature most requested by Canadian retail investors switching to Wealthsimple.
-
-<!-- Add screenshots here: transfers tab, auto-invest empty state, auto-invest setup form -->
 
 - Set up recurring investments with from/to account pickers
 - Weekly or monthly frequency with market-hours disclaimer
@@ -74,6 +74,8 @@ Beyond the three features, the entire app UI was rebuilt to match the real RBC D
 <p align="center">
   <img src="screenshots/01-login.png" width="300" alt="Login screen" />
 </p>
+
+A full walkthrough is available in the [demo video](screenshots/demo.mp4).
 
 ---
 
