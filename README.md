@@ -4,7 +4,7 @@ Why? Wanted to solve friction points I ran into using RBC Direct Investing daily
 
 I cloned the app and made three main improvements.
 
-**[Read the full PRD](PRD.pdf)** for the problem analysis, evidence, and success criteria behind each feature.
+**[Read the full PRD](https://github.com/kkim030/RBCDirectInvesting/blob/main/PRD_RBC_Direct_Investing.pdf)** for the problem analysis, evidence, and success criteria behind each feature.
 
 **[Test out the demo](https://appetize.io/app/b_l2hvvb7heqfzwuww2i52vco5ae)** to launch the application on desktop and test out the demo. When launched, scroll down and click *demo account*.
 
